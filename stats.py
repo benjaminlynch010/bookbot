@@ -13,3 +13,16 @@ def get_num_chars(text):
             char_dict[lowered] = 1
     return char_dict
 
+
+def sort_on(items):
+    return items["count"]
+
+def reports(dict):
+    char_list = []
+    for item in dict:
+        entry = { "char": item, "count": dict[item] }
+        char_list.append(entry)
+    char_list.sort(reverse=True, key=sort_on)
+    return char_list
+
+
